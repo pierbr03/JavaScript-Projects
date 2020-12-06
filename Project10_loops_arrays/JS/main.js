@@ -1,47 +1,47 @@
-var X = "Lexus";
-document.write(X);
+var X = "Lexus"; //setting X to the string Lexus
+document.write(X); //Write or display X
 {
-    let X = "Nissan";
-    document.write("<br>" + X);
+    let X = "Nissan"; //Let statment allows to change X briefly 
+    document.write("<br>" + X); //printing the "New" string assigned to X
 }
 
 
 
-function Call_Loop() {
+function Call_Loop() { //Naming our function Call_Loop
 var Digit = "";
-var X = 1;
-while (X < 11) {
+var X = 1; //Setting our Variable X to 1
+while (X < 11) { //While X is less than 11 continue the loop
     Digit += "<br>" + X;
-    X++;
+    X++; //This adds 1 to X after each loop until it reaches false, in this case anything past 10
 }
 
-document.getElementById("Loop").innerHTML = Digit;
+document.getElementById("Loop").innerHTML = Digit; 
 
 }
 
 
-function str_Length_Function() {
-    var str = "Nissan Skyline R32 GTR";
+function str_Length_Function() { //This is our String length function
+    var str = "Nissan Skyline R32 GTR"; //Using str statment will count the number of characters in the string
     var n = str.length;
-    document.getElementById("length").innerHTML = n;
+    document.getElementById("length").innerHTML = n; //In the string assosiated with Nissan Skyline, there are 22 characters which is what is displayed when the button is pressed
 }
 
 
-var Instruments = ["Guitar", "Drums", "Bass", "Piano", "Trumpet"];
+var Instruments = ["Guitar", "Drums", "Bass", "Piano", "Trumpet"]; //Setting Instruments equal to all the instruments listed
 var Content = "";
 var Y;
-function for_Loop() {
-    for (Y = 0; Y < Instruments.length; Y++) {
+function for_Loop() { //Creating the for loop
+    for (Y = 0; Y < Instruments.length; Y++) { 
         Content += Instruments[Y] + "<br>";
     }
-    document.getElementById("List_of_Instruments").innerHTML = Content;
+    document.getElementById("List_of_Instruments").innerHTML = Content; //This will display the list of instruments in our for loop 
 }
 
 
 
-function array_Function() {
+function array_Function() { //Naming our array function
     var guitars = [];
-    guitars[0] = "Chapman";
+    guitars[0] = "Chapman"; //Assigning a guitar brand to a number in our array
     guitars[1] = "PRS";
     guitars[2] = "Fender";
     guitars[3] = "Gibson";
@@ -51,31 +51,31 @@ function array_Function() {
         guitars[4] + " guitars.";
 }
 
-function car_Function() {
-    const sports_Car = {type: "car", brand:"Lexus", model:"LFA", color: "black"};
+function car_Function() { //Using the constant statement
+    const sports_Car = {type: "car", brand:"Lexus", model:"LFA", color: "black"}; //Here we are assinging a string to each object found with in what we named sports car
     sports_Car.color = "purple";
     sports_Car.price = "350,000";
-    document.getElementById("Constant").innerHTML = "The cost of the " + sports_Car.brand + sports_Car.model + "is " + sports_Car.price; 
+    document.getElementById("Constant").innerHTML = "The cost of the " + sports_Car.brand + sports_Car.model + "is " + sports_Car.price; //This will display the brand model and price in one line
 }
 
 
 
 
-function r_Function(name) { // broken
+function r_Function(name) { //This is my example using a return statment, in the HTML file we have the Name assinged to Brady, This will display Hello Brady
     return "Hello " + name;
 }
-document.getElementById("Example").innerHTML = r_Function("Brady");
 
 
 
-
+function l_function() { //Example of a let function
 let Car = {
-    make: "Subaru ",
-    model: "Forester XT ",
-    year: "2018 ",
-    color: "Black ",
-    description : l_function() {
-        return "The car is a " + this.year + this.color + this.make + this.model;
+    make: "Subaru ", //Assigning the make of the car
+    model: "Forester XT ", //Assigning the model of the car
+    year: "2018 ", //Assigning the year of the car
+    color: "Black ", //Assigning the color of the car
+    description : function() { //
+        return "The car is a " + this.year + this.color + this.make + this.model; //This will display the year color make and model of the car
     }  
 };
-document.getElementById("Object").innerHTML = car.description();
+document.getElementById("Object").innerHTML = Car.description();
+}
