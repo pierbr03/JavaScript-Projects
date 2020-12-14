@@ -14,7 +14,7 @@ function placeXOrO(squareNumber) {
         //This condition checks who's turn it is.
         if(activePlayer === 'X') {
             //If activePlayer is equal to 'X' the x.png is placed in HTML
-            select.style.backgroundImage = 'url ("images/x.png")';
+            select.style.backgroundImage = 'url("images/x.png")';
         //Active player may only be 'X' or 'O' so, if not 'X' it must be an 'O'
         } else {
             //If activePlayer is equal to 'O', the o.png is placed in HTML
@@ -71,28 +71,11 @@ function placeXOrO(squareNumber) {
      }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //This function parses the seletedSquares array to search for win conditions.
 //darwWinLine function is called to draw line if condition is met.
 function checkWinConditions() {
     //X 0,1,2 condition.
-    if    (arrayIncludes('0X', '1x', '2X')) { drawWinLine(50, 100, 558, 100) }
+    if    (arrayIncludes('0X', '1X', '2X')) { drawWinLine(50, 100, 558, 100) }
     //X 3, 4, 5 condition.
     else if (arrayIncludes('3X', '4X', '5X')) { drawWinLine(50, 304, 558, 304) }
     //X 6, 7, 8 condition.
@@ -170,16 +153,7 @@ function audio (audioURL) {
     let audio = new Audio (audioURL);
     //Play method plays our audio sound.
     audio.play();
-}
-
-
-
-
-
-
-
-
-
+ }
 
 }
 
@@ -241,11 +215,6 @@ function animateLineDrawing() {
         if (x >= x2 && y <= y2) { cancelAnimationFrame(animationLoop); }
     }
 
-
-
-}
-
-
 //This function clears our canvas after our win line is drawn
 function clear() {
     //This line starts our animation loop
@@ -255,6 +224,9 @@ function clear() {
     //This line stops our animation loop
     cancelAnimationFrame(animationLoop);
 }
+
+}
+
 //This line disallows clicking while the win sound is playing
 disableClick();
 //This line plays the win sound.
@@ -265,7 +237,12 @@ animateLineDrawing();
 //Then, clears canvas, resets game, and allows clicking again
 setTimeout(function () { clear(); resetGame(); }, 1000);
 
+
+
 }
+
+
+
 
 
 //This function resets the game in a tie or a win
