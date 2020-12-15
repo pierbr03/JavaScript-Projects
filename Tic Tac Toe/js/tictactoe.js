@@ -69,6 +69,7 @@ function placeXOrO(squareNumber) {
             };
         }
      }
+}
 
 
 //This function parses the seletedSquares array to search for win conditions.
@@ -115,8 +116,6 @@ function checkWinConditions() {
         setTimeout(function () { resetGame(); }, 1000);
     }
 
-
-
 }
 
 
@@ -134,16 +133,19 @@ function arrayIncludes(squareA, squareB, squareC) {
 
     }
 
+    
 
-
-
-
-//This function makes our body element temporarily unclickable
-function disableClick() {
-    //This makes our body unclickable
-    body.style.pointerEvents = 'none';
-    //This makes our body clickable again after 1 second
-    setTimeout(function() {body.style.pointerEvents = 'auto' ;}, 1000)
+//This function resets the game in a tie or a win
+function resetGame() {
+    //This for loop iterates through each HTML square element
+    for (let i = 0; i < 9; i++) {
+        //This variable gets the html element of i
+        let square = document.getElementById(String(i));
+        //This removes our elements backgroundImage
+        square.style.backgroundImage = '';
+    }
+    //This resets our array so it is empty and we can start over
+    selectedSquares = [];
 }
 
 //This function takes a string parameter of the path you set earlier for 
@@ -155,12 +157,8 @@ function audio (audioURL) {
     audio.play();
  }
 
-}
 
-
-
-
-//This function utilizes html canas to draw win lines.
+ //This function utilizes html canas to draw win lines.
 function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
     //This line accesses our html cavas element
     const canvas = document.getElementById('win-lines');
@@ -214,6 +212,7 @@ function animateLineDrawing() {
         if (y > y2 ) { y -= 10; }
         if (x >= x2 && y <= y2) { cancelAnimationFrame(animationLoop); }
     }
+}
 
 //This function clears our canvas after our win line is drawn
 function clear() {
@@ -223,8 +222,6 @@ function clear() {
     c.clearRect(0, 0, 608, 608);
     //This line stops our animation loop
     cancelAnimationFrame(animationLoop);
-}
-
 }
 
 //This line disallows clicking while the win sound is playing
@@ -242,22 +239,12 @@ setTimeout(function () { clear(); resetGame(); }, 1000);
 }
 
 
-
-
-
-//This function resets the game in a tie or a win
-function resetGame() {
-    //This for loop iterates through each HTML square element
-    for (let i = 0; i < 9; i++) {
-        //This variable gets the html element of i
-        let square = document.getElementById(String(i));
-        //This removes our elements backgroundImage
-        square.style.backgroundImage = '';
-    }
-    //This resets our array so it is empty and we can start over
-    selectedSquares = [];
+//This function makes our body element temporarily unclickable
+function disableClick() {
+    //This makes our body unclickable
+    body.style.pointerEvents = 'none';
+    //This makes our body clickable again after 1 second
+    setTimeout(function() {body.style.pointerEvents = 'auto' ;}, 1000)
 }
-
-
 
 
