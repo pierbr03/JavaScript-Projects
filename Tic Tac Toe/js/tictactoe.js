@@ -133,7 +133,7 @@ function arrayIncludes(squareA, squareB, squareC) {
 
     }
 
-    
+
 
 //This function resets the game in a tie or a win
 function resetGame() {
@@ -173,9 +173,9 @@ function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
     //This line indicates where the end of a lines x axis is.
     y2 = coordY2,
     //This variable stores temporary x axis data we update in our animation loop
-    x = xl,
+    x = x1,
     //This variable stores temporary y axis data we update in our animation loop
-    y = yl;
+    y = y1;
 
 
     //This function interacts with the cavnas
