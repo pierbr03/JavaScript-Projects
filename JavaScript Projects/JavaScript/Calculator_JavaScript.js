@@ -1,7 +1,7 @@
 // Creates an object to keep track of values
 const Calculator = {
     //This displays 0 on the screen
-    display_Value: '0',
+    Display_Value: '0',
     //This will hold the first operand for any expressions, we set it to null for now
     First_Operand: null,
     //This checks whether or not the second operand has been input
@@ -21,7 +21,7 @@ function Input_Digit(digit) {
     } else {
         //This overwrites Display_Value if the current value is 0
         //otherwise it adds onto it
-        Calculator.display_Value = Display_Value === '0' ? digit : Display_Value + digit;
+        Calculator.Display_Value = Display_Value === '0' ? digit : Display_Value + digit;
     }
 }
 //This section handles decimal points
@@ -112,7 +112,7 @@ if (target.classList.contains('operator')) {
 
 
 if (target.classList.contains('decimal')) {
-    Handle_Operator(target.value);
+    Input_Decimal(target.value);
     Update_Display();
     return;
 }
