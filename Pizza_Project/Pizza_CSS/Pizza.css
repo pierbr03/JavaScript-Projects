@@ -68,3 +68,13 @@ div {
     font-family: fantasy;
     color: lightgrey;
 }
+
+.flex-container {
+    display: flex;
+  }
+
+
+  .menu_right {
+      position: absolute;
+      right: 245px;
+  }
