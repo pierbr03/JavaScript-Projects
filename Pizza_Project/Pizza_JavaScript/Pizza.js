@@ -10,7 +10,7 @@ function getReceipt() {
             var selectedSize = sizeArray[i].value;
             text1 = text1+selectedSize+"<br>";
         }
-    }
+    }//These are the if and else if statements for when a user selects a certian size pizza
     if (selectedSize === "Personal Pizza") {
         sizeTotal = 6;
     } else if (selectedSize === "Small Pizza") {
@@ -29,7 +29,7 @@ function getReceipt() {
     //These variables will get passed on to each function
     getTopping(runningTotal,text1);
     };
-
+    //Here is the last function for when a user selects toppings
     function getTopping(runningTotal,text1) {
         var toppingTotal = 0;
         var selectedTopping = [];
